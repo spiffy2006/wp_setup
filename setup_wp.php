@@ -26,7 +26,7 @@ if ($_SERVER['argc'] > 1) :
     $admin_pass = 'B00st3r!';
     $email = 'jcox@boostability.com';
     include $path . '/wp-admin/setup-config.php';
-    exec("curl -F weblog_title=$site_title -F user_name=$user_name -F admin_password=$admin_pass -F admin_password2=$admin_pass -F admin_email=$email -F blog_public=0 http://localhost/$path/wp-admin/install.php?step=2");
+    exec("curl --data weblog_title=$site_title&user_name=$user_name&admin_password=$admin_pass&admin_password2=$admin_pass&admin_email=$email&blog_public=0 http://localhost/$path/wp-admin/install.php?step=2");
 else :
     echo 'Arguments are: path, db_name, db_user, and db_pass';
 endif;
